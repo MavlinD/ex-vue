@@ -5,7 +5,11 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prettier:check": "prettier -c .",
+    "prettier:fix": "prettier --write .",
+    "stylelint:check": "stylelint -f verbose **/*.{vue,scss}",
+    "stylelint:fix": "stylelint **/*.{vue,scss} --fix"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -30,6 +34,11 @@
     "pug": "^3.0.0",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^8.0.2",
+    "stylelint": "^13.7.2",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0",
     "vue-template-compiler": "^2.6.11"
   }
 }

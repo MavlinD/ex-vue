@@ -1,12 +1,12 @@
 arrowParens: avoid
 bracketSpacing: true
 embeddedLanguageFormatting: auto
-htmlWhitespaceSensitivity: css
+htmlWhitespaceSensitivity: ignore
 insertPragma: false
 jsxBracketSameLine: false
 jsxSingleQuote: false
 printWidth: 80
-proseWrap: preserve
+proseWrap: always
 quoteProps: as-needed
 requirePragma: false
 semi: false
@@ -15,4 +15,3 @@ tabWidth: 2
 trailingComma: es5
 useTabs: false
 vueIndentScriptAndStyle: true
-
