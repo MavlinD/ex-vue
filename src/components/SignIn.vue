@@ -8,13 +8,12 @@
 </template>
 
 <script>
-  let gkkgjjjgk
+  let ggg
 
   export default {
-    name: 'HelloWorld',
+    name: 'SignIn',
     props: {
       msg: String,
-      tst: Number,
     },
   }
 </script>

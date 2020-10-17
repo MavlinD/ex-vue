@@ -1,4 +1,5 @@
 module.exports = {
+  // https://stylelint.io/user-guide/rules/list
   extends: ['stylelint-config-standard', 'stylelint-config-recommended-scss'],
   plugins: ['stylelint-order'],
   rules: {
@@ -7,7 +8,7 @@ module.exports = {
     'no-duplicate-selectors': true,
     'color-hex-case': 'lower',
     'color-hex-length': 'short',
-    'color-named': 'never',
+    'color-named': 'always-where-possible',
     'selector-combinator-space-after': 'always',
     'selector-attribute-quotes': 'always',
     'selector-attribute-operator-space-before': 'never',
