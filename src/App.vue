@@ -1,8 +1,8 @@
 <template lang="pug">
   div(id="app")
-    nav(id="nav").outline-blue
-      router-link(to="/").outline-brown Sign-In
-      router-link(to="/about") Analytics
+    nav.outline-blue
+      router-link(to="/").outline-brown Вход
+      router-link(to="/about") Аналитика
     router-view
 </template>
 
@@ -15,12 +15,12 @@
     text-align: center;
   }
 
-  #nav {
+  nav {
     display: grid;
+    padding: 30px;
     grid-auto-flow: column;
     place-content: center center;
     gap: 2rem;
-    padding: 30px;
 
     a {
       font-weight: bold;

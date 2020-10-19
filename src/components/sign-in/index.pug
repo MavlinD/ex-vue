@@ -1,0 +1,12 @@
+.hello
+    h2 {{ head }}
+    p Автор: Мавлин Дмитрий
+    form(@submit.prevent='fetch').outline-brown
+        input(
+            @change='validate'
+            @input='validate'
+            v-model='siteId' placeholder='leadhit-site-id' autofocus)
+        slide-up-down(:active="isErrMsg" :duration="300" :use-hidden="false")
+            .err-msg.outline-crimson
+                span {{ errMsg }}
+        button(type='submit' :disabled='!isBtnEnabled') Вход

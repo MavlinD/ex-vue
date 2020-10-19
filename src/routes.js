@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '@/components/home/index.vue'
 
 Vue.use(VueRouter)
 
@@ -13,7 +13,7 @@ const routes = [
   {
     path: '/chart',
     name: 'Chart',
-    component: () => import('../views/Chart.vue'),
+    component: () => import('@/components/chart/index.vue'),
   },
 ]
 

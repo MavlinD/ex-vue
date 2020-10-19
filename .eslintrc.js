@@ -21,5 +21,13 @@ module.exports = {
         baseIndent: 1,
       },
     ],
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'never',
+        named: 'never',
+        asyncArrow: 'always',
+      },
+    ],
   },
 }
