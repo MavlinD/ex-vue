@@ -1,8 +1,9 @@
 <template lang="pug">
   div(id="app")
     nav.outline-blue
-      router-link(to="/").outline-brown Вход
-      router-link(to="/about") Аналитика
+      router-link(to="/").outline-brown Главная
+      router-link(to="/sign-in").outline-brown Вход
+      router-link(to="/chart") Аналитика
     router-view
 </template>
 

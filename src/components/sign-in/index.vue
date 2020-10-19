@@ -5,6 +5,8 @@
 <script>
   import './_index.scss'
   import SlideUpDown from 'vue-slide-up-down'
+  import router from '@/routes'
+  import Home from '@/components/home/index.vue'
 
   export default {
     name: 'SignIn',
@@ -17,10 +19,11 @@
     },
     components: {
       SlideUpDown,
+      Home
     },
     data() {
       return {
-        siteId: '',
+        siteId: 'abs',
         isErrMsg: false,
         isBtnEnabled: true,
         isInit: false,
@@ -44,7 +47,24 @@
       fetch() {
         this.initForm()
         this.validate()
-        console.log('fetch >>> ' + Math.random())
+        fetch('https://track-api.leadhit.io/client/test_auth', {
+          method: 'get',
+          headers: {
+            'Api-Key': '5f8475902b0be670555f1bb3:eEZn8u05G3bzRpdL7RiHCvrYAYo',
+            'Leadhit-Site-Id': '5f8475902b0be670555f1bb3',
+          },
+          responseType: 'json',
+        }).then(
+          response => {
+            console.log(response)
+            response.status === 200 && localStorage.setItem('leadhit-site-id', '5f8475902b0be670555f1bb3')
+            router.push({ name: 'Chart' })
+          },
+        ).catch(function(error) {
+          console.log(error)
+        })
+
+        // console.log('fetch >>> ' + Math.random())
       },
       // watch: {},
       // computed: {},

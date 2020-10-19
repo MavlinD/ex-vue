@@ -1,17 +1,12 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="@/assets/logo.png"/>
-    <SignIn head="Тестовое задание для Lead-hit"/>
-  </div>
+<template lang="pug">
+  .home
+    h2 Тестовое задание для Lead-hit
+    p Автор: Мавлин Дмитрий
+    img(alt="Vue logo" src="@/assets/logo.png")
 </template>
 
 <script>
-  import SignIn from '@/components/sign-in/index.vue'
-
   export default {
     name: 'Home',
-    components: {
-      SignIn,
-    },
   }
 </script>
