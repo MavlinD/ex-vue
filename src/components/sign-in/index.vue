@@ -6,7 +6,6 @@
   import './_index.scss'
   import SlideUpDown from 'vue-slide-up-down'
   import router from '@/routes'
-  import Home from '@/components/home/index.vue'
 
   export default {
     name: 'SignIn',
@@ -19,7 +18,6 @@
     },
     components: {
       SlideUpDown,
-      Home
     },
     data() {
       return {
@@ -32,7 +30,6 @@
     methods: {
       initForm() {
         this.isInit = true
-        console.log('initForm >> this.isInit: ' + this.isInit)
       },
       validate() {
         if (!this.isInit) return
@@ -58,7 +55,8 @@
           response => {
             console.log(response)
             response.status === 200 && localStorage.setItem('leadhit-site-id', '5f8475902b0be670555f1bb3')
-            router.push({ name: 'Chart' })
+            router.push({ name: 'Analytics' })
+            // if (!localStorage.getItem('leadhit-site-id')) router.push({ name: 'SignIn' })
           },
         ).catch(function(error) {
           console.log(error)

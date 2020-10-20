@@ -1,11 +1,21 @@
 <template lang="pug">
   div(id="app")
-    nav.outline-blue
-      router-link(to="/").outline-brown Главная
-      router-link(to="/sign-in").outline-brown Вход
-      router-link(to="/chart") Аналитика
-    router-view
+    Home
+    Nav
 </template>
+
+<script>
+  import Home from '@/components/home/index.vue'
+  import Nav from '@/components/nav/index.vue'
+
+  export default {
+    name: 'App',
+    components: {
+      Home,
+      Nav
+    },
+  }
+</script>
 
 <style lang="scss">
   $color: #2c3e50;
@@ -14,6 +24,10 @@
     font-family: Avenir, Helvetica, Arial, sans-serif;
     color: $color;
     text-align: center;
+  }
+
+  hr {
+    width: 50%;
   }
 
   nav {

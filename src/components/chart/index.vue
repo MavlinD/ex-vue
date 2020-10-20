@@ -1,16 +1,18 @@
 <template lang="pug">
-  .chart
-    Home
-    h1 This is an chart page
+  .analytics
+    h1 This is an analytics page
 </template>
 
 <script>
-  import Home from '@/components/home/index.vue'
 
   export default {
-    name: 'Chart',
-    components: {
-      Home,
+    name: 'Analytics',
+    components: {},
+    beforeRouteEnter(to, from, next) {
+      if (!localStorage.getItem('leadhit-site-id')) {
+        next({ name: 'SignIn' })
+      } else next()
     },
+
   }
 </script>
