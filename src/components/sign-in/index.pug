@@ -5,6 +5,6 @@
             @input='validate'
             v-model='siteId' placeholder='leadhit-site-id' autofocus)
         slide-up-down(:active="isErrMsg" :duration="300" :use-hidden="false")
-            .err-msg.outline-crimson
-                span {{ errMsg }}
+            ul.err-msg.outline-crimson
+                li(v-for="item in errors" :key="item") {{ item }}
         button(type='submit' :disabled='!isBtnEnabled') Вход

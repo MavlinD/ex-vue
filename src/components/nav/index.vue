@@ -2,8 +2,10 @@
   div
     hr
     nav.outline-blue
-      router-link(to="/").outline-brown Главная
-      router-link(to="/analytics") Аналитика
+      router-link(to="/").outline-brown
+        span Главная
+      router-link(to="/analytics")
+        span Аналитика
       User(:isAuth="isAuth()")
     hr
     router-view
@@ -11,7 +13,7 @@
 
 <script>
 
-  import User from '@/components/user/index'
+  import User from 'components/user/index'
 
   export default {
     name: 'Nav',

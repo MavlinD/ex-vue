@@ -12,13 +12,15 @@
     name: 'App',
     components: {
       Home,
-      Nav
+      Nav,
     },
   }
 </script>
 
 <style lang="scss">
   $color: #2c3e50;
+  $bg-color: #42b983;
+  $txt-color: #c7d2ce;
 
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -32,14 +34,33 @@
 
   nav {
     display: grid;
-    padding: 30px;
     grid-auto-flow: column;
     place-content: center center;
-    gap: 2rem;
+    place-items: center;
 
     a {
+      padding: 20px 40px;
       font-weight: bold;
-      color: $color;
+      background-color: $color;
+      color: $txt-color;
+      text-decoration: none;
+
+      span {
+        padding-bottom: 3px;
+        border: solid currentColor;
+        border-width: 0 0 2px 0;
+        transition: all .2s;
+      }
+
+      &:hover {
+        background-color: #0b2c44;
+        transition: all .2s;
+
+        span {
+          border-color: transparent;
+          transition: all .2s;
+        }
+      }
 
       &.router-link-exact-active {
         color: #42b983;

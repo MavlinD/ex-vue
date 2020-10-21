@@ -24,7 +24,7 @@ const routes = [
   {
     path: '/analytics',
     name: 'Analytics',
-    component: () => import('@/components/chart/index.vue'),
+    component: () => import('@/components/analytics/index.vue'),
   },
 ]
 

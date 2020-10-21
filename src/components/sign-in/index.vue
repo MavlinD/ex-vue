@@ -11,10 +11,10 @@
     name: 'SignIn',
     props: {
       head: String,
-      errMsg: {
-        default: 'Длина поля должна быть не менее 24 символов',
+      rightSiteId: {
+        type: String,
+        default: '5f8475902b0be670555f1bb3',
       },
-      minLength: { default: 3 },
     },
     components: {
       SlideUpDown,
@@ -22,7 +22,12 @@
     data() {
       return {
         siteId: 'abs',
+        errMsg: `id сайта должен содержать ${this.rightSiteId.length} символа.`,
+        errAuth: `id сайта должен быть равен: ${this.rightSiteId}`,
         isErrMsg: false,
+        isErrAuth: false,
+        isFormValid: false,
+        errors: [],
         isBtnEnabled: true,
         isInit: false,
       }
@@ -33,36 +38,45 @@
       },
       validate() {
         if (!this.isInit) return
-        if (this.siteId.length > this.minLength) {
+        this.errors = []
+        if (this.siteId.length === this.rightSiteId.length) {
           this.isErrMsg = false
           this.isBtnEnabled = true
+          this.isFormValid = true
         } else {
+          this.errors.push(this.errMsg)
           this.isErrMsg = true
           this.isBtnEnabled = false
+          this.isFormValid = false
         }
       },
-      fetch() {
+      fetch(a) {
+        const inputVal = a.target.querySelector('input').value
         this.initForm()
         this.validate()
+        if (!this.isFormValid) return
         fetch('https://track-api.leadhit.io/client/test_auth', {
           method: 'get',
           headers: {
             'Api-Key': '5f8475902b0be670555f1bb3:eEZn8u05G3bzRpdL7RiHCvrYAYo',
-            'Leadhit-Site-Id': '5f8475902b0be670555f1bb3',
+            'Leadhit-Site-Id': inputVal,
           },
           responseType: 'json',
         }).then(
           response => {
-            console.log(response)
-            response.status === 200 && localStorage.setItem('leadhit-site-id', '5f8475902b0be670555f1bb3')
-            router.push({ name: 'Analytics' })
-            // if (!localStorage.getItem('leadhit-site-id')) router.push({ name: 'SignIn' })
+            // console.log(response)
+            if (response.status === 200) {
+              localStorage.setItem('leadhit-site-id', '5f8475902b0be670555f1bb3')
+              router.push({ name: 'Analytics' })
+            } else {
+              this.errors.push(this.errAuth)
+              this.isErrMsg = true
+              this.isBtnEnabled = true
+            }
           },
         ).catch(function(error) {
           console.log(error)
         })
-
-        // console.log('fetch >>> ' + Math.random())
       },
       // watch: {},
       // computed: {},

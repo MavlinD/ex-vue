@@ -1,7 +1,9 @@
 <template lang="pug">
   div
-    router-link(v-if="isAuth" to="/sign-out").outline-brown Выход
-    router-link(v-if="!isAuth" to="/sign-in").outline-brown Вход
+    router-link(v-if="isAuth" to="/sign-out").outline-brown
+      span Выход
+    router-link(v-if="!isAuth" to="/sign-in").outline-brown
+      span Вход
 </template>
 
 <script>
@@ -10,7 +12,7 @@
     props: {
       isAuth: {
         type: Boolean,
-        default: !!['isAuth']
+        default: !!['isAuth'],
       },
     },
   }
