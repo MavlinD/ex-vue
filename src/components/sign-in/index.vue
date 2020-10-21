@@ -14,7 +14,7 @@
       head: String,
       rightSiteId: {
         type: String,
-        default: '',
+        default: '5f8475902b0be670555f1bb3',
       },
     },
     components: {
@@ -22,7 +22,7 @@
     },
     data() {
       return {
-        siteId: '5f8475902b0be670555f1bb5',
+        siteId: '',
         errMsg: `id сайта должен содержать ${this.rightSiteId.length} символа.`,
         errAuth: `id сайта должен быть равен:<span>${this.rightSiteId}</span>`,
         isErrMsg: false,
