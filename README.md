@@ -1,5 +1,7 @@
 # lead-hit test task
-### Author: Мавлин Дмитрий 
+
+### Author: Мавлин Дмитрий
+
 - mavlind@list.ru
 - 8 950 264 8622
 
@@ -26,4 +28,3 @@ npm run build
 ```
 npm run lint
 ```
-

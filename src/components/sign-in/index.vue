@@ -63,21 +63,24 @@
             'Leadhit-Site-Id': inputVal,
           },
           responseType: 'json',
-        }).then(
-          response => {
+        })
+          .then(response => {
             // console.log(response)
             if (response.status === 200) {
-              localStorage.setItem('leadhit-site-id', '5f8475902b0be670555f1bb3')
+              localStorage.setItem(
+                'leadhit-site-id',
+                '5f8475902b0be670555f1bb3'
+              )
               router.push({ name: 'Analytics' })
             } else {
               this.errors.push(this.errAuth)
               this.isErrMsg = true
               this.isBtnEnabled = true
             }
-          },
-        ).catch(function(error) {
-          console.log(error)
-        })
+          })
+          .catch(function(error) {
+            console.log(error)
+          })
       },
       // watch: {},
       // computed: {},

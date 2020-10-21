@@ -49,16 +49,16 @@
         padding-bottom: 3px;
         border: solid currentColor;
         border-width: 0 0 2px 0;
-        transition: all .2s;
+        transition: all 0.2s;
       }
 
       &:hover {
         background-color: #0b2c44;
-        transition: all .2s;
+        transition: all 0.2s;
 
         span {
           border-color: transparent;
-          transition: all .2s;
+          transition: all 0.2s;
         }
       }
 

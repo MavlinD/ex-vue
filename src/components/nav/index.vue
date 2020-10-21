@@ -12,7 +12,6 @@
 </template>
 
 <script>
-
   import User from 'components/user/index'
 
   export default {

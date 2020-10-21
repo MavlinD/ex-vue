@@ -4,7 +4,6 @@
 </template>
 
 <script>
-
   export default {
     title: 'Аналитика',
     name: 'Analytics',

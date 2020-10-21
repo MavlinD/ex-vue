@@ -27,19 +27,21 @@
   const chartData = arg => {
     return {
       labels: arg.labels,
-      datasets: [{
-        label: 'Кол-во посетителей',
-        data: arg.data,
-        lineTension: 0.25,
-        fill: true,
-        borderColor: '#9400fb',
-        backgroundColor: 'rgb(229,199,249, .65)',
-        pointBackgroundColor: '#9400fb',
-        pointRadius: 7,
-        pointHoverRadius: 12,
-        pointHitRadius: 30,
-        pointStyle: 'circle',
-      }],
+      datasets: [
+        {
+          label: 'Кол-во посетителей',
+          data: arg.data,
+          lineTension: 0.25,
+          fill: true,
+          borderColor: '#9400fb',
+          backgroundColor: 'rgb(229,199,249, .65)',
+          pointBackgroundColor: '#9400fb',
+          pointRadius: 7,
+          pointHoverRadius: 12,
+          pointHitRadius: 30,
+          pointStyle: 'circle',
+        },
+      ],
     }
   }
 
@@ -61,35 +63,39 @@
       caretPadding: 12,
     },
     scales: {
-      xAxes: [{
-        type: 'time',
-        bounds: 'ticks',
-        time: {
-          unit: 'week',
-          unitStepSize: 1,
-          round: 'day',
-          tooltipFormat: 'D MMMM YYYY',
+      xAxes: [
+        {
+          type: 'time',
+          bounds: 'ticks',
+          time: {
+            unit: 'week',
+            unitStepSize: 1,
+            round: 'day',
+            tooltipFormat: 'D MMMM YYYY',
+          },
+          gridLines: {
+            color: 'black',
+            borderDash: [5, 5],
+            zeroLineColor: 'black',
+            zeroLineBorderDash: [5, 5],
+            drawBorder: true,
+            drawOnChartArea: true,
+          },
         },
-        gridLines: {
-          color: 'black',
-          borderDash: [5, 5],
-          zeroLineColor: 'black',
-          zeroLineBorderDash: [5, 5],
-          drawBorder: true,
-          drawOnChartArea: true,
+      ],
+      yAxes: [
+        {
+          gridLines: {
+            drawBorder: true,
+            drawOnChartArea: true,
+            color: 'black',
+            borderDash: [5, 5],
+          },
+          ticks: {
+            beginAtZero: false,
+          },
         },
-      }],
-      yAxes: [{
-        gridLines: {
-          drawBorder: true,
-          drawOnChartArea: true,
-          color: 'black',
-          borderDash: [5, 5],
-        },
-        ticks: {
-          beginAtZero: false,
-        },
-      }],
+      ],
     },
   }
 
