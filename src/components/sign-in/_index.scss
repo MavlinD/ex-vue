@@ -15,16 +15,16 @@ a {
 form {
   display: grid;
   width: max-content;
+  margin: 2rem auto 0;
+  padding: 2rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  background-clip: padding-box;
   gap: 1rem;
   place-content: center;
   place-items: center;
-  margin: 2rem auto 0;
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.85);
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.25rem;
 
   h2 {
     margin: 1rem;
@@ -41,8 +41,8 @@ button {
   margin: 0;
 
   span {
-    display: block;
     font-weight: bold;
+    display: block;
     padding-top: 0.5rem;
   }
 }

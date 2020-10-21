@@ -1,7 +1,8 @@
 {
-  "name": "lead-hit",
+  "name": "lead-hit-test",
   "version": "0.1.0",
   "private": true,
+  "main": "main.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -10,6 +11,11 @@
     "prettier:fix": "prettier -w .",
     "stylelint:check": "stylelint -f verbose **/*.{vue,scss,css}",
     "stylelint:fix": "stylelint **/*.{vue,scss,css} --fix"
+  },
+  "author": "Мавлин Дм.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MavlinD/lead-hit-test"
   },
   "dependencies": {
     "bootstrap": "^4.5.3",

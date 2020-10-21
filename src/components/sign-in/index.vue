@@ -14,7 +14,7 @@
       head: String,
       rightSiteId: {
         type: String,
-        default: '5f8475902b0be670555f1bb3',
+        default: '',
       },
     },
     components: {

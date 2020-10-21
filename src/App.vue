@@ -39,26 +39,26 @@
     place-items: center;
 
     a {
-      padding: 20px 40px;
       font-weight: bold;
-      background-color: $color;
       color: $txt-color;
       text-decoration: none;
+      padding: 20px 40px;
+      background-color: $color;
 
       span {
         padding-bottom: 3px;
-        border: solid currentColor;
-        border-width: 0 0 2px 0;
         transition: all 0.2s;
+        border: solid currentColor;
+        border-width: 0 0 2px;
       }
 
       &:hover {
-        background-color: #0b2c44;
         transition: all 0.2s;
+        background-color: #0b2c44;
 
         span {
-          border-color: transparent;
           transition: all 0.2s;
+          border-color: transparent;
         }
       }
 
