@@ -4,7 +4,7 @@ module.exports = {
   plugins: ['stylelint-order'],
   rules: {
     indentation: 2,
-    'string-quotes': 'single',
+    // 'string-quotes': 'single',
     'no-duplicate-selectors': true,
     'color-hex-case': 'lower',
     'color-hex-length': 'short',

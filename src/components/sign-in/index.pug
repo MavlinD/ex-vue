@@ -1,10 +1,15 @@
-.hello
-    form(@submit.prevent='fetch').outline-brown
-        input(
+form(@submit.prevent='fetch').outline-brown
+    h2 Вход
+    .input-group
+        .input-group-prepend
+            span.input-group-text id сайта
+        input.form-control(
+            type='text'
             @change='validate'
             @input='validate'
             v-model='siteId' placeholder='leadhit-site-id' autofocus)
-        slide-up-down(:active="isErrMsg" :duration="300" :use-hidden="false")
-            ul.err-msg.outline-crimson
-                li(v-for="item in errors" :key="item") {{ item }}
-        button(type='submit' :disabled='!isBtnEnabled') Вход
+
+    slide-up-down(:active="isErrMsg" :duration="300" :use-hidden="false")
+        ul.err-msg.outline-crimson.alert.alert-warning(role="alert")
+            li(v-for="item in errors" :key="item" v-html='item')
+    button(type='submit' :disabled='!isBtnEnabled').btn.btn-primary Войти

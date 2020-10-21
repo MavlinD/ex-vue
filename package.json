@@ -12,6 +12,7 @@
     "stylelint:fix": "stylelint **/*.{vue,scss,css} --fix"
   },
   "dependencies": {
+    "bootstrap": "^4.5.3",
     "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
     "moment": "^2.29.1",

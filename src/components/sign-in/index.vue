@@ -8,6 +8,7 @@
   import router from '@/routes'
 
   export default {
+    title: 'Вход',
     name: 'SignIn',
     props: {
       head: String,
@@ -21,9 +22,9 @@
     },
     data() {
       return {
-        siteId: 'abs',
+        siteId: '5f8475902b0be670555f1bb5',
         errMsg: `id сайта должен содержать ${this.rightSiteId.length} символа.`,
-        errAuth: `id сайта должен быть равен: ${this.rightSiteId}`,
+        errAuth: `id сайта должен быть равен:<span>${this.rightSiteId}</span>`,
         isErrMsg: false,
         isErrAuth: false,
         isFormValid: false,

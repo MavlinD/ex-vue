@@ -14,22 +14,35 @@ a {
 
 form {
   display: grid;
-  width: 500px;
+  width: max-content;
   gap: 1rem;
   place-content: center;
   place-items: center;
-  margin: 0 auto;
+  margin: 2rem auto 0;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, .85);
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .1);
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .1);
+  border-radius: .25rem;
+
+  h2 {
+    margin: 1rem;
+  }
 }
 
 button {
   width: auto;
-  padding: 8px 25px;
+  padding: 8px 35px !important;
   cursor: pointer;
 }
 
 .err-msg {
+  margin: 0;
+
   span {
-    display: inline-block;
-    padding: 1rem;
+    display: block;
+    font-weight: bold;
+    padding-top: .5rem;
   }
 }
