@@ -24,7 +24,9 @@
     }
   },
   "lint-staged": {
-     "*.(js|jsx|vue)": ["npm run lint"]
+    "*.(js|jsx|vue)": [
+      "npm run lint"
+    ]
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
