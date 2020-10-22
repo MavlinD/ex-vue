@@ -78,7 +78,7 @@
               this.isBtnEnabled = true
             }
           })
-          .catch(function(error) {
+          .catch(error => {
             console.log(error)
           })
       },
