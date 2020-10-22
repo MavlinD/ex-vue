@@ -3,7 +3,6 @@
 </template>
 
 <script>
-  let t
   export default {
     title: 'Домашняя',
   }

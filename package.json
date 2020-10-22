@@ -20,12 +20,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm lint"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-     "*.(js|jsx|vue)": ["npm run lint", "git add"]
+     "*.(js|jsx|vue)": ["npm run lint"]
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
