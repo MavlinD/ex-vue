@@ -5,7 +5,7 @@
 <script>
   import './_index.scss'
   import SlideUpDown from 'vue-slide-up-down'
-  import router from '@/routes'
+  import { router } from '@/routes'
 
   export default {
     title: 'Вход',

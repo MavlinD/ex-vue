@@ -15,11 +15,7 @@ module.exports = {
   //   .use('pug-plain-loader')
   //   .loader('pug-plain-loader')
   //   .tap((options = {}) => {
-  //     // изменение настроек...
-  //     // console.log(options)
   //     options.basedir = 'src'
-  //     // options.root = 'src'
-  //     //     return args
   //     return options
   //   })
   configureWebpack: {
