@@ -1,19 +1,9 @@
-import { mount, shallowMount } from '@vue/test-utils'
-import HomePage from '@/components/home/home.vue'
+import { routsMount } from '../common'
+import rootComp from '@/components/home/index'
 
-const factory = (values = {}) => {
-  return shallowMount(HomePage, {
-    data() {
-      return {
-        ...values,
-      }
-    },
-  })
-}
-
-describe('home/home.vue', () => {
-  it('проверка home page', () => {
-    const wrapper = factory()
-    expect(wrapper.text()).toMatch('Это домашняя страница')
+describe('components/home/index.vue', () => {
+  it('try use mount for a home', async () => {
+    const { $$ } = routsMount({ rootComp })
+    expect($$.text()).toMatch('Это домашняя страница')
   })
 })

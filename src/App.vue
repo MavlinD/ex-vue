@@ -1,17 +1,17 @@
 <template lang="pug">
   div(id="app")
-    Home
+    Base
     Nav
 </template>
 
 <script>
-  import Home from '@/components/home/index.vue'
+  import Base from '@/components/base/index.vue'
   import Nav from '@/components/nav/index.vue'
 
   export default {
     name: 'App',
     components: {
-      Home,
+      Base,
       Nav,
     },
   }
