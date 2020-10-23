@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import { routes } from '@/routes.js'
 import App from '@/App.vue'
 
-export const factory = (component, values = {}) => {
+export const _shallow = ({ component = App, values = {} }) => {
   return shallowMount(component, {
     data() {
       return {
@@ -13,7 +13,7 @@ export const factory = (component, values = {}) => {
   })
 }
 
-export const routsCase = (values = {}, rootComp = App) => {
+export const routsShallow = ({ rootComp = App, values = {} }) => {
   const localVue = createLocalVue()
   localVue.use(VueRouter)
   const router = new VueRouter({ routes })
@@ -32,21 +32,25 @@ export const routsCase = (values = {}, rootComp = App) => {
   }
 }
 
-export const routsCaseFullMount = (values = {}, rootComp = App) => {
+export const routsMount = ({ rootComp = App, values = {} }) => {
   const localVue = createLocalVue()
   localVue.use(VueRouter)
   const router = new VueRouter({ routes })
 
   return {
     $$: mount(rootComp, {
-      data() {
-        return {
-          localVue,
-          router,
-          ...values,
-        }
-      },
+      localVue,
+      router,
+      ...values,
     }),
     router,
+  }
+}
+
+export const _mount = ({ component = App, values = {} }) => {
+  return {
+    $$: mount(component, {
+      ...values,
+    }),
   }
 }
