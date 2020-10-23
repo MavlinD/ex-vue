@@ -1,4 +1,4 @@
-import { createLocalVue, shallowMount } from '@vue/test-utils'
+import { createLocalVue, mount, shallowMount } from '@vue/test-utils'
 import VueRouter from 'vue-router'
 import { routes } from '@/routes.js'
 import App from '@/App.vue'
@@ -13,13 +13,13 @@ export const factory = (component, values = {}) => {
   })
 }
 
-export const routsCase = (component, url, values = {}, rootComp = App) => {
+export const routsCase = (values = {}, rootComp = App) => {
   const localVue = createLocalVue()
   localVue.use(VueRouter)
   const router = new VueRouter({ routes })
 
   return {
-    $$: shallowMount(rootComp, component, {
+    $$: shallowMount(rootComp, {
       data() {
         return {
           localVue,
@@ -29,22 +29,24 @@ export const routsCase = (component, url, values = {}, rootComp = App) => {
       },
     }),
     router,
-    // router.push(url)
-    // await wrapper.vm.$nextTick()
   }
 }
-// return async () => {
-//   // import { createLocalVue, shallowMount } from '@vue/test-utils'
-//   const wrapper = shallowMount(rootComp, component, {
-//     data() {
-//       return {
-//         localVue,
-//         router,
-//         ...values,
-//       }
-//     },
-//   })
-//   router.push(url)
-//   await wrapper.vm.$nextTick()
-// }
-// }
+
+export const routsCaseFullMount = (values = {}, rootComp = App) => {
+  const localVue = createLocalVue()
+  localVue.use(VueRouter)
+  const router = new VueRouter({ routes })
+
+  return {
+    $$: mount(rootComp, {
+      data() {
+        return {
+          localVue,
+          router,
+          ...values,
+        }
+      },
+    }),
+    router,
+  }
+}
