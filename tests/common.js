@@ -20,10 +20,10 @@ export const routsShallow = ({ rootComp = App, values = {} }) => {
 
   return {
     $$: shallowMount(rootComp, {
+      localVue,
+      router,
       data() {
         return {
-          localVue,
-          router,
           ...values,
         }
       },
@@ -41,7 +41,11 @@ export const routsMount = ({ rootComp = App, values = {} }) => {
     $$: mount(rootComp, {
       localVue,
       router,
-      ...values,
+      data() {
+        return {
+          ...values,
+        }
+      },
     }),
     router,
   }
@@ -50,7 +54,17 @@ export const routsMount = ({ rootComp = App, values = {} }) => {
 export const _mount = ({ component = App, values = {} }) => {
   return {
     $$: mount(component, {
-      ...values,
+      data() {
+        return {
+          ...values,
+        }
+      },
     }),
   }
+}
+
+export const mockFetch = (_url, _data) => {
+  return new Promise((resolve, reject) => {
+    resolve()
+  })
 }

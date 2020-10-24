@@ -1,5 +1,6 @@
 <template lang="pug">
   .container
+    h2 Аналитика
     line-chart(
       v-if="loaded"
       :chartdata="chartdata"
