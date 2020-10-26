@@ -5,19 +5,31 @@ import flushPromises from 'flush-promises'
 // global.fetch = require('node-fetch')
 
 describe('components/sign-in/index.vue', () => {
-  const fetch = jest.fn()
+  // const fetch = jest.fn()
+  // jest.mock('fetch')
+  // const mockSubmit = jest.spyOn(component.methods, 'submit')
+  // const mockFetch = jest.spyOn(document, 'fetch')
+  // const mockFetch = jest.spyOn(component.methods, 'fetch')
   // it('check submit event', () => {
   it('check NOT submit event', async () => {
     const values = {
-      fetch,
       siteId: '5f8475902b0be670555f1bb3',
+      // fetch,
+      // mocks: {
+      //   fetch,
+      // },
       // fetch5: fetch,
       // fetch: mockFetch,
       // isFormValid: false,
     }
     const { $$ } = _mount({ component, values })
-    // $$.find('input').setValue('5f8475902b0be670555f1bb3++')
+    const fetch = jest.fn()
+    $$.vm.fetch = fetch
     await $$.find('form').trigger('submit') // !!
+    await flushPromises()
+    expect(fetch).toHaveBeenCalled()
+    // $$.vm.update()
+    // $$.find('input').setValue('5f8475902b0be670555f1bb3++')
     // await $$.find('form button').trigger('click') // !!
     // await $$.find('form').vm.$emit('submit')
     // await $$.find('.text2').trigger('click') // !!
@@ -27,7 +39,10 @@ describe('components/sign-in/index.vue', () => {
     // await $$.vm.$emit('submit', 123) // !!
     // await $$.vm.trigger('submit')
     // await $$.find('form').trigger('submit.prevent')
-    await flushPromises()
+    // expect(saveMock.mock.calls.length).toBe(1)
+    // expect(saveMock.mock.calls.length).toBe(1)
+    // expect(mockFetch).toHaveBeenCalled()
+    // expect(mockFetch).not.toHaveBeenCalled()
     // console.log($$.html())
     // console.log($$.classes())
     // console.log($$.emitted())
@@ -39,7 +54,7 @@ describe('components/sign-in/index.vue', () => {
     // console.log($$.find('button'))
     // console.log($$.find('form'))
     // expect(fetch).toHaveBeenCalled()
-    expect(fetch).toBeCalled()
+    // expect(fetch).toBeCalled()
     // expect($$.vm.$data.fetch.called).toBe(true)
     // expect($$.emitted().click5).toBe(true)
     // expect($$.emitted().click5).toBeTruthy()

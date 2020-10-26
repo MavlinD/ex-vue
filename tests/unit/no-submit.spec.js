@@ -1,16 +1,15 @@
 import component from '@/components/sign-in/index.vue'
-import { _mount, _shallow } from '../common'
+import { _mount } from '../common'
 
 describe('components/sign-in/index.vue', () => {
-  const fetch = jest.fn()
   it('check NO submit event', () => {
     const values = {
-      fetch,
       siteId: 'fake ID',
     }
-    const { $$ } = _shallow({ component, values })
+    const { $$ } = _mount({ component, values })
+    const fetch = jest.fn()
+    $$.vm.fetch = fetch
     $$.find('form').trigger('submit')
-    // console.log($$.html())
-    expect(fetch).not.toBeCalled()
+    expect(fetch).not.toHaveBeenCalled()
   })
 })
