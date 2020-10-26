@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import LineChart from './Chart.vue'
+  import LineChart from 'components/chartjs'
   import moment from 'moment'
 
   moment.locale('ru')

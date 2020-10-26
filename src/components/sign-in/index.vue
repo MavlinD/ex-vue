@@ -31,11 +31,16 @@
         errors: [],
         isBtnEnabled: true,
         isInit: false,
-        fetch: () => {
-          const inputVal = this.siteId
+        submit: () => {
+          // console.log('emit submit')
           this.initForm()
           this.validate()
           if (!this.isFormValid) return
+          this.fetch()
+        },
+        fetch: () => {
+          // console.log('run fetch')
+          const inputVal = this.siteId
           fetch('https://track-api.leadhit.io/client/test_auth', {
             method: 'get',
             headers: {
@@ -46,18 +51,21 @@
           })
             .then(response => {
               // console.log(response)
-              if (response.status === 200) {
-                localStorage.setItem('leadhit-site-id', this.siteId)
-                router.push({ name: 'Analytics' })
-              } else {
-                this.errors.push(this.errAuth)
-                this.isErrMsg = true
-                this.isBtnEnabled = true
-              }
+              this.handleResponse(response)
             })
             .catch(error => {
               console.log(error)
             })
+        },
+        handleResponse(response) {
+          if (response.status === 200) {
+            localStorage.setItem('leadhit-site-id', this.siteId)
+            router.push({ name: 'Analytics' })
+          } else {
+            this.errors.push(this.errAuth)
+            this.isErrMsg = true
+            this.isBtnEnabled = true
+          }
         },
         initForm() {
           // console.log(this)

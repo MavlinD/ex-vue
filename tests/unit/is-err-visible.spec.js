@@ -6,7 +6,7 @@ describe('components/sign-in/index.vue', () => {
     const values = {
       errors: ['id сайта должен содержать'],
     }
-    const wrapper = _shallow({ component, values })
-    expect(wrapper.text()).toMatch('id сайта должен содержать')
+    const { $$ } = _shallow({ component, values })
+    expect($$.text()).toMatch('id сайта должен содержать')
   })
 })

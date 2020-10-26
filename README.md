@@ -32,3 +32,8 @@ npm run lint
 ```
 npm run test:unit
 ```
+
+### Clear test cache
+```
+npx vue-cli-service test:unit --clearCache
+```

@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
+    "test:unit": "npx vue-cli-service test:unit --clearCache && vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "fix": "npm run lint && npm run prettier:fix && npm run stylelint:fix",
     "prettier:check": "prettier -c .",

@@ -4,13 +4,15 @@ import { routes } from '@/routes.js'
 import App from '@/App.vue'
 
 export const _shallow = ({ component = App, values = {} }) => {
-  return shallowMount(component, {
-    data() {
-      return {
-        ...values,
-      }
-    },
-  })
+  return {
+    $$: shallowMount(component, {
+      data() {
+        return {
+          ...values,
+        }
+      },
+    }),
+  }
 }
 
 export const routsShallow = ({ rootComp = App, values = {} }) => {
