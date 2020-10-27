@@ -15,7 +15,11 @@ export const _shallow = ({ component = App, values = {} }) => {
   }
 }
 
-export const routsShallow = ({ rootComp = App, values = {} }) => {
+export const routsShallowMount = ({
+  rootComp = App,
+  values = {},
+  mocks = {},
+}) => {
   const localVue = createLocalVue()
   localVue.use(VueRouter)
   const router = new VueRouter({ routes })
@@ -24,6 +28,7 @@ export const routsShallow = ({ rootComp = App, values = {} }) => {
     $$: shallowMount(rootComp, {
       localVue,
       router,
+      mocks,
       data() {
         return {
           ...values,
@@ -34,15 +39,17 @@ export const routsShallow = ({ rootComp = App, values = {} }) => {
   }
 }
 
-export const routsMount = ({ rootComp = App, values = {} }) => {
+export const routsMount = ({ component = App, values = {}, mocks = {} }) => {
   const localVue = createLocalVue()
   localVue.use(VueRouter)
-  const router = new VueRouter({ routes })
+  const router = new VueRouter({ routes, mode: 'abstract' })
 
   return {
-    $$: mount(rootComp, {
+    $$: mount(component, {
       localVue,
       router,
+      ...mocks,
+      stubs: ['router-link', 'router-view'],
       data() {
         return {
           ...values,

@@ -1,9 +1,9 @@
 import { routsMount } from '../common'
-import rootComp from '@/components/home/index'
+import component from '@/components/home/index'
 
 describe('components/home/index.vue', () => {
   it('try use mount for a home', async () => {
-    const { $$ } = routsMount({ rootComp })
+    const { $$ } = routsMount({ component })
     expect($$.text()).toMatch('Это домашняя страница')
   })
 })

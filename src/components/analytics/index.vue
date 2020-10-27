@@ -4,18 +4,18 @@
 </template>
 
 <script>
+  import { checkSiteId } from '@/components/analytics'
+
   export default {
     title: 'Аналитика',
     name: 'Analytics',
     components: {
       LineChartContainer: () => {
-        return import('@/components/chart/index')
+        return import('components/chart/index')
       },
     },
     beforeRouteEnter(to, from, next) {
-      if (!localStorage.getItem('leadhit-site-id')) {
-        next({ name: 'SignIn' })
-      } else next()
+      checkSiteId(to, from, next)
     },
   }
 </script>

@@ -5,8 +5,8 @@
 </template>
 
 <script>
-  import Base from '@/components/base/index.vue'
-  import Nav from '@/components/nav/index.vue'
+  import Base from 'components/base/index.vue'
+  import Nav from 'components/nav/index.vue'
 
   export default {
     name: 'App',
