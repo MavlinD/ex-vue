@@ -2,8 +2,9 @@ const path = require('path')
 // const { isDev, isProd } = require('./bundler-scripts/getEnv')
 // console.log(isProd, isDev)
 
-function resolveSrc(_path) {
-  return path.join(__dirname, _path)
+function resolveAlias(..._path) {
+  /* rest */
+  return path.join(__dirname, ..._path) // spread
 }
 
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
@@ -18,12 +19,15 @@ module.exports = {
   //     options.basedir = 'src'
   //     return options
   //   })
+  // chainWebpack: config => {
+  //   config.resolve.alias.set('tests', path.resolve('tests'))
+  // },
   configureWebpack: {
     resolve: {
       alias: {
-        src: resolveSrc('src'),
-        assets: resolveSrc('src/assets'),
-        components: resolveSrc('src/components'),
+        src: resolveAlias('src'),
+        assets: resolveAlias('src', 'assets'),
+        components: resolveAlias('src', 'components'),
       },
     },
     plugins: [

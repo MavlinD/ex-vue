@@ -1,5 +1,6 @@
+import { _mount } from 'tests/common.js'
 import component from '@/components/sign-in/index.vue'
-import { _mount, mockFetch } from '../common'
+// import { _mount } from '../common'
 import flushPromises from 'flush-promises'
 
 // global.fetch = require('node-fetch')
@@ -11,6 +12,9 @@ describe('components/sign-in/index.vue', () => {
   // const mockFetch = jest.spyOn(document, 'fetch')
   // const mockFetch = jest.spyOn(component.methods, 'fetch')
   // it('check submit event', () => {
+  const $route = {
+    path: '/analytics',
+  }
   it('check NOT submit event', async () => {
     const values = {
       siteId: '5f8475902b0be670555f1bb3',

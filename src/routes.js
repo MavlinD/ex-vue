@@ -7,12 +7,12 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('@/components/home/index.vue'),
+    component: () => import('components/home/index.vue'),
   },
   {
     path: '/sign-in',
     name: 'SignIn',
-    component: () => import('@/components/sign-in/index.vue'),
+    component: () => import('components/sign-in/index.vue'),
   },
   {
     path: '/sign-out',
@@ -25,7 +25,7 @@ const routes = [
   {
     path: '/analytics',
     name: 'Analytics',
-    component: () => import('@/components/analytics/index.vue'),
+    component: () => import('components/analytics/index.vue'),
   },
 ]
 

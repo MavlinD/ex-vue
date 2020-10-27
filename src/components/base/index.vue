@@ -1,8 +1,8 @@
 <template lang="pug">
   .home
-    h2 Тестовое задание для Lead-hit
+    h2 Vue app for example
     p Автор: &nbsp;
-      strong Мавлин Дмитрий
+      strong MDV
     img(alt="Vue logo" src="@/assets/logo.png")
 </template>
 

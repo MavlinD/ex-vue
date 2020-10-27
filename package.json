@@ -1,5 +1,5 @@
 {
-  "name": "lead-hit-test",
+  "name": "vue-app-for-example",
   "version": "0.1.0",
   "private": true,
   "author": "Мавлин Дм.",
@@ -7,13 +7,13 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "npx vue-cli-service test:unit --clearCache && vue-cli-service test:unit",
-    "test:watch": "jest --watch",
     "lint": "vue-cli-service lint",
     "fix": "npm run lint && npm run prettier:fix && npm run stylelint:fix",
     "prettier:check": "prettier -c .",
     "prettier:fix": "prettier -w .",
     "stylelint:check": "stylelint -f verbose **/*.{vue,scss,css}",
-    "stylelint:fix": "stylelint **/*.{vue,scss,css} --fix"
+    "stylelint:fix": "stylelint **/*.{vue,scss,css} --fix",
+    "test:watch": "npx vue-cli-service test:unit --clearCache && jest --watch"
   },
   "main": "main.js",
   "dependencies": {
@@ -68,11 +68,12 @@
   "lint-staged": {
     "*.(js|jsx|vue)": [
       "npm run lint",
+      "npm run test:unit",
       "git add"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MavlinD/lead-hit-test"
+    "url": "https://github.com/MavlinD/vue-app-for-example"
   }
 }

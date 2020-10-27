@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import User from '@/components/user/index'
+  import User from 'components/user/index'
 
   export default {
     name: 'Nav',

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import LineChart from 'components/chartjs'
+  import LineChart from 'components/chart-js'
   import moment from 'moment'
 
   moment.locale('ru')
