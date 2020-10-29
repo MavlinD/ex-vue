@@ -5,7 +5,6 @@
 <script>
   import './_index.scss'
   import SlideUpDown from 'vue-slide-up-down'
-  import { router } from '@/routes'
 
   export default {
     title: 'Вход',
@@ -16,6 +15,18 @@
         type: String,
         default: '5f8475902b0be670555f1bb3',
       },
+      tplErrMsg: {
+        type: Function,
+        default(a) {
+          return `id сайта должен содержать ${a.length} символа.`
+        },
+      },
+      tplErrAuth: {
+        type: Function,
+        default(a) {
+          return `id сайта должен быть равен:<span>${a}</span>`
+        },
+      },
     },
     components: {
       SlideUpDown,
@@ -23,8 +34,6 @@
     data() {
       return {
         siteId: '',
-        errMsg: `id сайта должен содержать ${this.rightSiteId.length} символа.`,
-        errAuth: `id сайта должен быть равен:<span>${this.rightSiteId}</span>`,
         isErrMsg: false,
         isErrAuth: false,
         isFormValid: false,
@@ -63,9 +72,9 @@
       handleResponse(response) {
         if (response.status === 200) {
           localStorage.setItem('leadhit-site-id', this.siteId)
-          router.push({ name: 'Analytics' })
+          this.$router.push({ name: 'Analytics' })
         } else {
-          this.errors.push(this.errAuth)
+          this.errors.push(this.tplErrAuth(this.rightSiteId))
           this.isErrMsg = true
           this.isBtnEnabled = true
         }
@@ -83,7 +92,7 @@
           this.isBtnEnabled = true
           this.isFormValid = true
         } else {
-          this.errors.push(this.errMsg)
+          this.errors.push(this.tplErrMsg(this.rightSiteId))
           this.isErrMsg = true
           this.isBtnEnabled = false
           this.isFormValid = false

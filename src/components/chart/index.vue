@@ -1,10 +1,11 @@
 <template lang="pug">
   .container
-    h2 Аналитика
+    h2 Analytics
     line-chart(
       v-if="loaded"
       :chartdata="chartdata"
-      :chartoptions="chartoptions")
+      :chartoptions="chartoptions"
+    )
 </template>
 
 <script>
