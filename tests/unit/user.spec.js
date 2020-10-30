@@ -1,6 +1,6 @@
 import { routsMount } from '../common'
 
-describe('components/user/index.vue', () => {
+describe('components/nav/index.vue', () => {
   it('проверка НЕ удостоверенного пользователя', () => {
     const values = { isAuth: false }
     const { $$ } = routsMount({ values })
