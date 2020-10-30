@@ -123,6 +123,7 @@
         this.chartoptions = chartOptions
         this.loaded = true
       } catch (e) {
+        // eslint-disable-next-line
         console.error(e)
       }
     },
