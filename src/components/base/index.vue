@@ -1,6 +1,6 @@
 <template lang="pug">
   .home
-    h2 Vue app for example
+    h1 Vue app for example
     p Автор: &nbsp;
       strong MDV
     img(alt="Vue logo" src="@/assets/logo.png")

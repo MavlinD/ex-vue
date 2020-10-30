@@ -5,6 +5,7 @@ form(@submit.prevent='submit').outline-brown
             span.input-group-text id сайта
         input.form-control(
             type='text'
+            name='site-id'
             @change='validate'
             @input='validate'
             v-model='siteId' placeholder='leadhit-site-id' autofocus)

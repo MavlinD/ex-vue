@@ -5,6 +5,8 @@
       v-if="loaded"
       :chartdata="chartdata"
       :chartoptions="chartoptions"
+      css-classes="chart-class"
+      :height="height"
     )
 </template>
 
@@ -105,6 +107,7 @@
     name: 'LineChartContainer',
     components: { LineChart },
     data: () => ({
+      height: 180, // height of (canvas) chart
       loaded: false,
       chartdata: null,
       chartoptions: null,
@@ -129,6 +132,10 @@
 <style lang="scss">
   .container {
     width: unquote('max(75%, min(1200px, 100%))');
+    margin: 0 auto;
+  }
+
+  canvas {
     margin: 0 auto;
   }
 </style>

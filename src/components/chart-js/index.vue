@@ -15,6 +15,7 @@
     },
     mounted() {
       this.renderChart(this.chartdata, this.chartoptions)
+      // console.log(this.$data._chart)
     },
   }
 </script>
