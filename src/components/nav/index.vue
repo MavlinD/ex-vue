@@ -3,9 +3,9 @@
     hr
     nav.outline-blue
       router-link(to="/").outline-brown
-        span Главная
+        span Main
       router-link(to="/analytics")
-        span Аналитика
+        span Analytics
       User(:isAuth="isAuth()")
     hr
     router-view

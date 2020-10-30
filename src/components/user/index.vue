@@ -1,9 +1,9 @@
 <template lang="pug">
   div
     router-link(v-if="isAuth" to="/sign-out").outline-brown
-      span Выход
+      span Sign-Out
     router-link(v-if="!isAuth" to="/sign-in").outline-brown
-      span Вход
+      span Sign-In
 </template>
 
 <script>

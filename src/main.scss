@@ -37,6 +37,7 @@ nav {
     text-decoration: none;
     padding: 20px 40px;
     background-color: $color;
+    min-width: 5rem;
 
     span {
       padding-bottom: 3px;
@@ -45,7 +46,8 @@ nav {
       border-width: 0 0 2px;
     }
 
-    &:hover {
+    &:hover,
+    &.router-link-exact-active {
       transition: all 0.2s;
       background-color: #0b2c44;
 

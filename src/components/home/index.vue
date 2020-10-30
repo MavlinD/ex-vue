@@ -1,9 +1,9 @@
 <template lang="pug">
-  h3 Это домашняя страница
+  h3 It home page
 </template>
 
 <script>
   export default {
-    title: 'Домашняя',
+    title: 'Home',
   }
 </script>

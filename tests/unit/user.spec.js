@@ -5,6 +5,6 @@ describe('components/user/index.vue', () => {
     const values = { isAuth: false }
     const { $$ } = routsMount({ values })
     // console.log($$.html())
-    expect($$.text()).toMatch('Вход')
+    expect($$.text()).toMatch('Sign-In')
   })
 })

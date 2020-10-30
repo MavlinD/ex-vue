@@ -25,6 +25,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
+        // '@': resolveAlias('src'), // no work(
         src: resolveAlias('src'),
         assets: resolveAlias('src', 'assets'),
         components: resolveAlias('src', 'components'),
@@ -37,7 +38,6 @@ module.exports = {
     ],
   },
   css: {
-    // Enable CSS source maps.
     sourceMap: true,
   },
 }

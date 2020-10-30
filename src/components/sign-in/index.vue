@@ -7,7 +7,7 @@
   import SlideUpDown from 'vue-slide-up-down'
 
   export default {
-    title: 'Вход',
+    title: 'SignIn',
     name: 'SignIn',
     props: {
       head: String,

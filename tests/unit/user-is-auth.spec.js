@@ -6,6 +6,6 @@ describe('components/user/index.vue', () => {
     const values = { props: { isAuth: true } }
     const { $$ } = routsMount({ component: User, values })
     // console.log($$.html())
-    expect($$.text()).toMatch('Выход')
+    expect($$.text()).toMatch('Sign-In')
   })
 })
