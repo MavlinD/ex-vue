@@ -13,6 +13,7 @@
     "stylelint:check": "stylelint -f verbose **/*.{vue,scss,css}",
     "stylelint:fix": "stylelint **/*.{vue,scss,css} --fix",
     "test:e2e": "vue-cli-service test:e2e",
+    "test:pre-push": "cypress run --headless",
     "test:unit": "npx vue-cli-service test:unit --clearCache && vue-cli-service test:unit",
     "test:watch": "npx vue-cli-service test:unit --clearCache && vue-cli-service test:unit --watchAll"
   },
@@ -37,6 +38,7 @@
     "@vue/eslint-config-standard": "^5.1.2",
     "@vue/test-utils": "^1.1.0",
     "babel-eslint": "^10.1.0",
+    "cypress": "^5.5.0",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
@@ -65,7 +67,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm run test:e2e"
+      "pre-push": "test:pre-push"
     }
   },
   "lint-staged": {
