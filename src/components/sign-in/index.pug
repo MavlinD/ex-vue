@@ -1,8 +1,8 @@
 form(@submit.prevent='submit').outline-brown
-    h2 Вход
-    .input-group
+    h2 Sign In
+    .input-group.m-auto.justify-content-center
         .input-group-prepend
-            span.input-group-text id сайта
+            span.input-group-text ID
         input.form-control(
             type='text'
             name='site-id'
@@ -13,4 +13,4 @@ form(@submit.prevent='submit').outline-brown
     slide-up-down(:active="isErrMsg" :duration="300" :use-hidden="false")
         ul.err-msg.outline-crimson.alert.alert-warning(role="alert")
             li(v-for="item in errors" :key="item" v-html='item')
-    button(:disabled='!isBtnEnabled').btn.btn-primary Войти
+    button(:disabled='!isBtnEnabled').btn.btn-primary Enter
