@@ -1,6 +1,9 @@
 <template lang="pug">
   div(id="app")
     Base
+      slot
+        p Author: &nbsp;
+            strong MDV
     Nav
 </template>
 
