@@ -74,7 +74,8 @@
     "*.(js|jsx|vue)": [
       "npm run lint",
       "npx vue-cli-service test:unit --clearCache && vue-cli-service test:unit",
-      "git add ."
+      "git add .",
+      "git commit"
     ]
   },
   "repository": {
