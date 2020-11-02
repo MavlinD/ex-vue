@@ -1,6 +1,7 @@
 server {
-    listen 80 default;
-    listen [::]:80 default;
+    listen ${NGINX_PORT} default;
+    listen [::]:${NGINX_PORT} default;
+    # v1.19 ngnix automatic serve .env
 
     charset utf-8;
 
@@ -8,11 +9,8 @@ server {
     # Always serve index.html for any request
 #     location /static/ {
         autoindex on;
-        root /usr/share/nginx/html;
-
-        #root $ENV{"APP_ROOT"};
+        root ${APP_ROOT};
         try_files $uri /index.html;
-
     }
 
 }

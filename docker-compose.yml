@@ -1,16 +1,19 @@
-version: '3.3'
+version: '3.6'
 
 services:
 
-    nginx:
-      build: ./nginx
-      container_name: ex-vue
-      ports:
-        - 8080:80
-      networks:
-        - net
-      volumes:
-        - ./dist:/usr/share/nginx/html
+  nginx:
+    build: ./nginx
+    container_name: ex-vue
+    env_file:
+      - .env # shoud be in root dir
+
+    ports:
+      - $EX_PORT:$NGINX_PORT
+    networks:
+      - net
+    volumes:
+      - ${DIST}:${APP_ROOT}
 
 networks:
   net:
